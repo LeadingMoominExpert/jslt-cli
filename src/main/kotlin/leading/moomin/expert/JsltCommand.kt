@@ -3,7 +3,6 @@ package leading.moomin.expert
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.schibsted.spt.data.jslt.Parser
-import java.util.logging.Logger
 import kotlin.system.exitProcess
 import picocli.CommandLine
 import picocli.CommandLine.Command
@@ -17,7 +16,6 @@ import kotlin.io.path.readText
     version = ["0.1.0"]
 )
 class JsltCommand: Callable<Int> {
-    private val logger = Logger.getLogger(javaClass.name)
     private val objectMapper = jacksonObjectMapper()
 
     @Parameters(index = "0", arity = "0..1", description = ["JSLT transform file"])
@@ -43,7 +41,7 @@ class JsltCommand: Callable<Int> {
 
             0
         } catch (exc: Exception) {
-            logger.warning(exc.message)
+            println(exc.message)
             1
     }
 
@@ -54,4 +52,3 @@ class JsltCommand: Callable<Int> {
         }
     }
 }
-

@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  release:
+    types:
+      - published
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup GraalVM
+        uses: graalvm/setup-graalvm@v1
+        with:
+          distribution: 'graalvm'
+          java-version: '21'
+          native-image-musl: 'true'
+          components: 'native-image'
+          check-for-updates: 'false'
+
+      - name: Build JAR
+        run: ./gradlew clean jar
+
+      - name: Build binary
+        run: native-image --no-fallback --install-exit-handlers -J-Xmx5550m -jar build/libs/jslt-cli.jar --static --libc=musl --gc=G1 -H:+TraceNativeToolUsage
+
+      - name: Compress built binary
+        run: tar -czvf jslt.tar.gz jslt
+
+      - name: Add artifact to release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          files: jslt.tar.gz

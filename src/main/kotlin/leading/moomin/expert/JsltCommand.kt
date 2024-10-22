@@ -30,7 +30,7 @@ class JsltCommand: Callable<Int> {
         names = ["-p", "--pretty"],
         description = ["Pretty print output"],
     )
-    private var prettyPrint = false
+    private var prettyPrint: Boolean = false
 
     override fun call(): Int =
         try {

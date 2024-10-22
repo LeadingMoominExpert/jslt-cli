@@ -12,8 +12,8 @@ jackson = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", versi
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 native = { id = "org.graalvm.buildtools.native", version = "0.10.3" }
 
 [bundles]
 kotlin = ["kotlin-stdlib", "kotlin-reflect"]
-picocli = ["picocli", "picocli-codegen"]

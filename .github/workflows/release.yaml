@@ -22,14 +22,13 @@ jobs:
           distribution: 'graalvm'
           java-version: '21'
           native-image-musl: 'true'
-          components: 'native-image'
           check-for-updates: 'false'
 
       - name: Build JAR
         run: ./gradlew clean jar
 
       - name: Build binary
-        run: native-image --no-fallback --install-exit-handlers -J-Xmx5550m -jar build/libs/jslt-cli.jar --static --libc=musl --gc=G1 -H:+TraceNativeToolUsage
+        run: ./native-build.sh
 
       - name: Compress built binary
         run: tar -czvf jslt.tar.gz jslt

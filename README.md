@@ -6,7 +6,7 @@ gradle clean jar
 ```
 Generate native-image configs
 ```bash
-java -agentlib:native-image-agent=config-output-dir=META-INF/native-image/leading.moomin.expert/jslt-cli -jar build/libs/jslt-cli.jar
+java -agentlib:native-image-agent=config-merge-dir=src/main/resources/META-INF/native-image/leading.moomin.expert/jslt-cli -jar build/libs/jslt-cli.jar
 ```
 Build binary
 ```

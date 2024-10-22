@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.native)
 
     // Apply the application plugin to add support for building a CLI application in Java.
@@ -13,8 +14,9 @@ repositories {
 }
 
 dependencies {
+    kapt(libs.picocli.codegen)
     implementation(libs.bundles.kotlin)
-    implementation(libs.bundles.picocli)
+    implementation(libs.picocli)
     implementation(libs.jslt)
     implementation(libs.jackson)
 }

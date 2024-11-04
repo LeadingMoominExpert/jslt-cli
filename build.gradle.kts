@@ -19,6 +19,8 @@ dependencies {
     implementation(libs.picocli)
     implementation(libs.jslt)
     implementation(libs.jackson)
+
+    testImplementation(kotlin("test"))
 }
 
 java {
@@ -45,5 +47,9 @@ tasks {
             .map { zipTree(it) }
         from(dependencies)
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+
+    test  {
+        useJUnitPlatform()
     }
 }

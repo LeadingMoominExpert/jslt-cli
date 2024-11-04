@@ -23,7 +23,7 @@ jobs:
           check-for-updates: 'false'
 
       - name: Build JAR
-        run: ./gradlew clean jar
+        run: ./gradlew clean test jar
 
       - name: Build binary
         run: ./native-build.sh

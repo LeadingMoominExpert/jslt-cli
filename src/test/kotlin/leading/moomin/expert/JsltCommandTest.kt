@@ -33,6 +33,6 @@ class JsltCommandTest {
         println(sw.toString())
 
         assertEquals(exitCode, 0)
-        assertContains(sw.toString(), "0.2.0")
+        assertContains(sw.toString(), "0.2.1")
     }
 }

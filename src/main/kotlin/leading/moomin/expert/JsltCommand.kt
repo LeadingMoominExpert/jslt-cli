@@ -14,7 +14,7 @@ import kotlin.io.path.readText
 
 @Command(
     name = "jslt",
-    version = ["0.2.0"],
+    version = ["0.2.1"],
     mixinStandardHelpOptions = true
 )
 class JsltCommand: Callable<Int> {

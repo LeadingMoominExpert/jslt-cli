@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     kapt(libs.picocli.codegen)
-    implementation(libs.bundles.kotlin)
+    implementation(libs.kotlin)
     implementation(libs.picocli)
     implementation(libs.jslt)
     implementation(libs.jackson)

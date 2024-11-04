@@ -34,9 +34,6 @@ class JsltCommand: Callable<Int> {
 
     override fun call(): Int =
         try {
-            requireNotNull(jsltTransform) { "No jslt file given in parameters" }
-            requireNotNull(inputFile) { "No json input given found in parameters" }
-
             val input: JsonNode = objectMapper.readTree(inputFile.readText())
 
             val jslt = Parser.compile(jsltTransform.toFile())

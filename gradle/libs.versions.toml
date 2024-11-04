@@ -3,8 +3,7 @@ kotlin = "2.0.21"
 picocli = "4.7.6"
 
 [libraries]
-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
-kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 picocli = { module = "info.picocli:picocli", version.ref = "picocli" }
 picocli-codegen = { module = "info.picocli:picocli-codegen", version.ref = "picocli" }
 jslt = { module = "com.schibsted.spt.data:jslt", version = "0.1.14" }
@@ -14,6 +13,3 @@ jackson = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", versi
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 native = { id = "org.graalvm.buildtools.native", version = "0.10.3" }
-
-[bundles]
-kotlin = ["kotlin-stdlib", "kotlin-reflect"]

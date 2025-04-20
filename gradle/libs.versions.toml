@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.1.20"
-picocli = "4.7.6"
+picocli = "4.7.7"
 
 [libraries]
 kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }

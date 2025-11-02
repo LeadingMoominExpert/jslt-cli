@@ -7,7 +7,7 @@ kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin"
 picocli = { module = "info.picocli:picocli", version.ref = "picocli" }
 picocli-codegen = { module = "info.picocli:picocli-codegen", version.ref = "picocli" }
 jslt = { module = "com.schibsted.spt.data:jslt", version = "0.1.14" }
-jackson = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version = "2.20.0" }
+jackson = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version = "2.20.1" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

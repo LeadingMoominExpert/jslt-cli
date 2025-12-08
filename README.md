@@ -2,7 +2,7 @@
 ## Use it
 Download it from releases
 ```bash
-wget https://github.com/LeadingMoominExpert/jslt-cli/releases/download/0.2.1/jslt.tar.gz
+wget https://github.com/LeadingMoominExpert/jslt-cli/releases/download/0.2.2/jslt.tar.gz
 tar -xvzf jslt.tar.gz
 ```
 and use it

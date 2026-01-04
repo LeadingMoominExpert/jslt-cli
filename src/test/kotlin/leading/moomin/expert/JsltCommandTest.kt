@@ -32,6 +32,6 @@ class JsltCommandTest {
         val exitCode = cmd.execute("-V")
 
         assertEquals(exitCode, 0)
-        assertContains(sw.toString(), "0.2.1")
+        assertContains(sw.toString(), "0.2.2")
     }
 }

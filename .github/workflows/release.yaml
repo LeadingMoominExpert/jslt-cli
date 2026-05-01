@@ -34,7 +34,7 @@ jobs:
         run: tar -czvf jslt.tar.gz jslt
 
       - name: Add artifact to release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         with:
